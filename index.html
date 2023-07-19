@@ -4,8 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4kKkwmp</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    4kKkwmp
+    <header>
+        <h1>4kKkwmp</h1>
+        <p>ลืมเปลี่ยนภาษาว่ะ</p>
+    </header>
+    <main>
+        <div class="container">
+            <div class="even-columns">
+                <div>
+                    <textarea id="englishTextBox" placeholder="4kKkwmp" oninput="englishToThai()"></textarea>
+                </div>
+                <div>
+                    <textarea id="thaiTextBox" placeholder="ภาษาไทย" oninput="thaiToEnglish()"></textarea>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="main.js"></script>
 </body>
 </html>
