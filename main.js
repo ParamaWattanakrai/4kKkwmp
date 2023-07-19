@@ -1,8 +1,10 @@
 const th_en = {
+    '_': '`',
+    '%': '~',
     'ๅ': '1',
     '+': '!',
-    '๑': '@',
     '/': '2',
+    '๑': '@',
     '-': '3',
     '๒': '#',
     'ภ': '4',
@@ -46,9 +48,9 @@ const th_en = {
     'บ': '[',
     'ฐ': '{',
     'ล': ']',
-    '`': '`',
+    ',': '}',
     'ฃ': '\\',
-    'ฅ': '`',
+    'ฅ': '|',
     'ฟ': 'a',
     'ฤ': 'A',
     'ห': 's',
@@ -81,11 +83,11 @@ const th_en = {
     'ฮ': 'V',
     'ิ': 'b',
     'ฺ': 'B',
-    'ท': 'n',
+    'ื': 'n',
     '์': 'N',
     'ท': 'm',
     '?': 'M',
-    'ม': '`',
+    'ม': ',',
     'ฒ': '<',
     'ใ': '.',
     'ฬ': '>',
@@ -93,20 +95,126 @@ const th_en = {
     'ฦ': '?',
 }
 
-const englishToThai = () => {
-    console.log("reached")
-    let text = document.getElementById("englishTextBox").value
+const en_th = {
+    '`': '_',
+    '~': '%',
+    '1': 'ๅ',
+    '!': '+',
+    '2': '/',
+    '@': '๑',
+    '3': '-',
+    '#': '๒',
+    '4': 'ภ',
+    '$': '๓',
+    '5': 'ถ',
+    '%': '๔',
+    '6': 'ุ',
+    '^': 'ู',
+    '7': 'ึ',
+    '&': '฿',
+    '8': 'ค',
+    '*': '๕',
+    '9': 'ต',
+    '(': '๖',
+    '0': 'จ',
+    ')': '๗',
+    '-': 'ข',
+    '_': '๘',
+    '=': 'ช',
+    '+': '๙',
+    'q': 'ๆ',
+    'Q': '๐',
+    'w': 'ไ',
+    'W': '"',
+    'e': 'ำ',
+    'E': 'ฎ',
+    'r': 'พ',
+    'R': 'ฑ',
+    't': 'ะ',
+    'T': 'ธ',
+    'y': 'ั',
+    'Y': 'ํ',
+    'u': 'ี',
+    'U': '๊',
+    'i': 'ร',
+    'I': 'ณ',
+    'o': 'น',
+    'O': 'ฯ',
+    'p': 'ย',
+    'P': 'ญ',
+    '[': 'บ',
+    '{': 'ฐ',
+    ']': 'ล',
+    '}': ',',
+    '\\': 'ฃ',
+    '|': 'ฅ',
+    'a': 'ฟ',
+    'A': 'ฤ',
+    's': 'ห',
+    'S': 'ฆ',
+    'd': 'ก',
+    'D': 'ฏ',
+    'f': 'ด',
+    'F': 'โ',
+    'g': 'เ',
+    'G': 'ฌ',
+    'h': '้',
+    'H': '็',
+    'j': '่',
+    'J': '๋',
+    'k': 'า',
+    'K': 'ษ',
+    'l': 'ส',
+    'L': 'ศ',
+    ';': 'ว',
+    ':': 'ซ',
+    "'": 'ง',
+    '"': '.',
+    'z': 'ผ',
+    'Z': '(',
+    'x': 'ป',
+    'X': ')',
+    'c': 'แ',
+    'C': 'ฉ',
+    'v': 'อ',
+    'V': 'ฮ',
+    'b': 'ิ',
+    'B': 'ฺ',
+    'n': 'ื',
+    'N': '์',
+    'm': 'ท',
+    'M': '?',
+    ',': 'ม',
+    '<': 'ฒ',
+    '.': 'ใ',
+    '>': 'ฬ',
+    '/': 'ฝ',
+    '?': 'ฦ',
+}
+
+const englishTextBox = document.getElementById("englishTextBox")
+const thaiTextBox = document.getElementById("thaiTextBox")
+
+const convertKeyMap = (originalTextBox, targetTextBox, map) => {
+    let text = originalTextBox.value
     let newText = ""
     let newCharacter = ''
     for (let i = 0; i < text.length; i++) {
         const character = text.charAt(i);
-        if (!(character in th_en)) {
+        if (!(character in map)) {
             newCharacter = character
         } else {
-            newCharacter = th_en[character]
+            newCharacter = map[character]
         }
         newText = newText + newCharacter
     }
-    console.log(text)
-    console.log(newText)
+    targetTextBox.value = newText
+}
+
+const englishToThai = () => {
+    convertKeyMap(englishTextBox, thaiTextBox, en_th)   
+}
+
+const thaiToEnglish = () => {
+    convertKeyMap(thaiTextBox, englishTextBox, th_en)   
 }
