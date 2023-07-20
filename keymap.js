@@ -1,6 +1,4 @@
-import {thEnKeymap, enThKeymap} from './keymap'
-
-const th_en = {
+export const thEnKeymap = {
     '_': '`',
     '%': '~',
     'ๅ': '1',
@@ -97,7 +95,7 @@ const th_en = {
     'ฦ': '?',
 }
 
-const en_th = {
+export const enThKeymap = {
     '`': '_',
     '~': '%',
     '1': 'ๅ',
@@ -192,31 +190,4 @@ const en_th = {
     '>': 'ฬ',
     '/': 'ฝ',
     '?': 'ฦ',
-}
-
-const englishTextBox = document.getElementById("englishTextBox")
-const thaiTextBox = document.getElementById("thaiTextBox")
-
-const convertKeyMap = (originalTextBox, targetTextBox, map) => {
-    let text = originalTextBox.value
-    let newText = ""
-    let newCharacter = ''
-    for (let i = 0; i < text.length; i++) {
-        const character = text.charAt(i);
-        if (!(character in map)) {
-            newCharacter = character
-        } else {
-            newCharacter = map[character]
-        }
-        newText = newText + newCharacter
-    }
-    targetTextBox.value = newText
-}
-
-const englishToThai = () => {
-    convertKeyMap(englishTextBox, thaiTextBox, en_th)   
-}
-
-const thaiToEnglish = () => {
-    convertKeyMap(thaiTextBox, englishTextBox, th_en)   
 }

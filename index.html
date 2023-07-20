@@ -5,24 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>4kKkwmp</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>4kKkwmp</h1>
-        <p>ลืมเปลี่ยนภาษาว่ะ</p>
+    <header class="main-header">
+        <h1 class="title">4kKkwmp => ภาษาไทย</h1>
+        <p>Thai-English Keyboard Mapping Converter</p>
     </header>
     <main>
         <div class="container">
             <div class="even-columns">
-                <div>
-                    <textarea id="englishTextBox" placeholder="4kKkwmp" oninput="englishToThai()"></textarea>
+                <div class="textbox-container">
+                    <h2>English Text Box</h2>
+                    <textarea id="englishTextBox" placeholder="4kKkwmp" oninput="englishToThai()" class="textbox"></textarea>
                 </div>
-                <div>
-                    <textarea id="thaiTextBox" placeholder="ภาษาไทย" oninput="thaiToEnglish()"></textarea>
+                <div class="textbox-container">
+                    <h2>Thai Text Box</h2>
+                    <textarea id="thaiTextBox" placeholder="ภาษาไทย" oninput="thaiToEnglish()" class="textbox"></textarea>
                 </div>
             </div>
         </div>
     </main>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>

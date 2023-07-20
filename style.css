@@ -1,5 +1,32 @@
+:root {
+    --clr-primary: hsl(22, 100%, 51%);
+    --clr-dark: hsl(270, 26%, 7%); 
+    --clr-very-dark: hsl(290, 100%, 3%);
+    --clr-light: hsl(28, 29%, 96%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 400;
+    color: var(--clr-light);
+}
+
+body {
+    background-color: var(--clr-very-dark);
+}
+
+.main-header {
+    text-align: center;
+    background-color: var(--clr-primary);
+
+    padding: 2em;
+}
+
 .container {
-    max-width: 1440px;
+    max-width: 1240px;
+    background-color: var(--clr-dark);
     margin-inline: auto;
 }
 
@@ -7,4 +34,23 @@
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 1) {
+
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.textbox-container > h2 {
+    font-size: 2rem; 
+    margin-bottom: 1rem;
+}
+
+.textbox {
+    width: 100%;
 }
