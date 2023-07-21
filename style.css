@@ -79,11 +79,6 @@ body {
     color: var(--clr-primary);
 }
 
-.hover-text {
-    font-size: inherit;
-    font-weight: var(--fw-bold);
-}
-
 .hover-title:hover {
     padding: 0.125em;
     border-radius: 0.25em;
