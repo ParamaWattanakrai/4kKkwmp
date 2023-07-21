@@ -46,8 +46,10 @@ body {
     gap: 2rem;
 }
 
-@media (max-width: 1) {
-
+@media (max-width: 490px) {
+    .even-columns {
+        display: block;
+    }
 }
 
 .main-header > h1 {
@@ -79,10 +81,10 @@ body {
 
 .hover-text {
     font-size: inherit;
-    font-weight: inherit;
+    font-weight: var(--fw-bold);
 }
 
-.hover-text:hover {
+.hover-title:hover {
     padding: 0.125em;
     border-radius: 0.25em;
 
@@ -91,4 +93,10 @@ body {
     font-size: var(--fs-large-hover);
 
     transition: 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.hover-topic:hover {
+    color: var(--clr-primary);
+    
+    transition: 800ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
